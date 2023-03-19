@@ -1,33 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 
-import { Auth } from "pages/auth/sign-in";
-// TODO
-// import logo from "./logo.svg";
-import "./App.scss";
+import { ThemeContextProvider, useThemeContext } from "context";
+import { Provider } from "react-redux";
+import store from "store/store";
 
-import Cookies from "universal-cookie";
-import { ChatRoom } from "pages/chat/chat-room";
-import { NewChat } from "pages/chat/new-chat";
+import Navigation from "navigation";
 
-const cookies = new Cookies();
-
-function App() {
-  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
-  const [room, setRoom] = useState<string | null>(null);
-
+const ThemedApp: React.FC = () => {
+  const { theme } = useThemeContext();
   return (
-    <>
-      {!isAuth ? (
-        <div>
-          <Auth setIsAuth={setIsAuth} />
-        </div>
-      ) : room ? (
-        <ChatRoom />
-      ) : (
-        <NewChat setRoom={setRoom} />
-      )}
-    </>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    </ThemeProvider>
   );
-}
+};
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <ThemeContextProvider>
+        <ThemedApp />
+      </ThemeContextProvider>
+    </BrowserRouter>
+  );
+};
 
 export default App;
