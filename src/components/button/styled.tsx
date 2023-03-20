@@ -9,7 +9,7 @@ import { ButtonProps } from "./types";
 
 const StyledButton = styled.button<ButtonProps>`
   border-radius: ${({ theme }) => theme.radii.M};
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.white};
 
   height: 40px;

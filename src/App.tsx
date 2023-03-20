@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 import store from "store/store";
 
 import Navigation from "navigation";
+import { GlobalStyle } from "styles";
 
 const ThemedApp: React.FC = () => {
   const { theme } = useThemeContext();
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Provider store={store}>
         <Navigation />
       </Provider>

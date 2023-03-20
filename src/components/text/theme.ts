@@ -18,9 +18,9 @@ export const style = {
   },
 
   [scales.header]: {
-    fontSizeLaptop: "24px",
-    fontSizeTablet: "24px",
-    fontSizeMobileS: "24px",
+    fontSizeLaptop: "42px",
+    fontSizeTablet: "42px",
+    fontSizeMobileS: "42px",
 
     lineHeight: 1,
   },

@@ -19,8 +19,7 @@ export const wordBreak = ({ wordBreak }: ThemedProps) => {
 
 export const Text = styled.p<TextProps>`
   color: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.black)};
-  font-family: ${({ theme }) => theme.fonts.ns};
-  font-weight: ${({ theme, $fontWeight }) => ($fontWeight ? theme.fontWeight[$fontWeight] : theme.fontWeight.regular)};
+  font-weight: ${({ theme, fontWeight }) => (fontWeight ? theme.fontWeights[fontWeight] : theme.fontWeights.regular)};
   line-height: ${({ textScale }) => textScale && style[textScale].lineHeight};
 
   ${({ theme }) => theme.mediaQueries.mobileS} {

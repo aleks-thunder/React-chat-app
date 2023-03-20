@@ -38,14 +38,10 @@ export const radii = {
   circle: "50%",
 } as const;
 
-export const fontWeight = {
+export const fontWeights = {
   bold: 900,
   medium: 600,
   regular: 400,
-} as const;
-
-export const fonts = {
-  ns: "NotoSans",
 } as const;
 
 export default {
@@ -54,6 +50,5 @@ export default {
   mediaQueries,
   shadows,
   radii,
-  fonts,
-  fontWeight,
+  fontWeights,
 };

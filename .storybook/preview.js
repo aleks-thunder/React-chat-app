@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
+import { GlobalStyle } from "../src/styles";
 import { ThemeContextProvider, useThemeContext } from "../src/context";
 import store from "../src/store/store";
 
@@ -11,7 +12,10 @@ const ThemedApp = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Provider store={store}>{children}</Provider>
+      <Provider store={store}>
+        <GlobalStyle />
+        {children}
+      </Provider>
     </ThemeProvider>
   );
 };
