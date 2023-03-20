@@ -1,19 +1,25 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const NewChat: React.FC<{ setRoom: React.Dispatch<React.SetStateAction<string | null>> }> = ({ setRoom }) => {
+import { ROUTES } from "navigation/routes";
+
+const NewChat: React.FC = () => {
   const roomInputRef = useRef<HTMLInputElement>(null);
 
+  const navigate = useNavigate();
   const onSubmit = () => {
     if (roomInputRef?.current?.value) {
-      setRoom(roomInputRef?.current?.value);
+      navigate("/" + ROUTES.chat + "/" + roomInputRef?.current?.value);
     }
   };
 
   return (
-    <div className="room">
+    <div>
       <label>Enter Room</label>
       <input ref={roomInputRef} />
       <button onClick={onSubmit}>Enter chat</button>
     </div>
   );
 };
+
+export default NewChat;

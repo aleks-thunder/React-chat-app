@@ -1,10 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserState } from "./types.js";
 
 const initialState: UserState = {
-  error: null,
-  pending: false,
-  user: null,
+  isAuthenticated: false,
 };
 
 const userSlice = createSlice({
@@ -16,8 +14,11 @@ const userSlice = createSlice({
     resetProfile: () => {
       return initialState;
     },
+    setAuth: (state, action: PayloadAction<boolean>) => {
+      state.isAuthenticated = action.payload;
+    },
   },
 });
 
-export const { resetProfile } = userSlice.actions;
+export const { resetProfile, setAuth } = userSlice.actions;
 export default userSlice;

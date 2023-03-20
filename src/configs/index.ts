@@ -1,2 +1,2 @@
-export { default as LOCAL_STORAGE_KEYS } from "./local-storage-keys";
-export { auth, provider } from "./firebase";
+export { LOCAL_STORAGE_KEYS } from "./local-storage-keys";
+export { FIREBASE } from "./firebase";
