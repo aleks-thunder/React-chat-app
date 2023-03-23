@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "@firebase/firestore";
+import { getFirestore, collection } from "@firebase/firestore";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -20,4 +20,5 @@ export const FIREBASE = {
   auth: getAuth(app),
   provider: new GoogleAuthProvider(),
   db: getFirestore(app),
+  messageCollection: collection(getFirestore(app), "messages"),
 };

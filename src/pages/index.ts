@@ -5,12 +5,7 @@ export const AuthPage = lazyLoad(
   module => module.default,
 );
 
-export const ChatRoomPage = lazyLoad(
-  () => import("./chat/chat-room"),
-  module => module.default,
-);
-
-export const NewChatPage = lazyLoad(
-  () => import("./chat/new-chat"),
+export const ChatPage = lazyLoad(
+  () => import("./chat/chat"),
   module => module.default,
 );

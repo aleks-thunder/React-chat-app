@@ -22,6 +22,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     background-color: ${({ theme }) => theme.colors.white};
   }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(0deg, #3640d0 0%, #879fdf 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+    border-radius: 100px;
+  }
 `;
 
 export default GlobalStyle;

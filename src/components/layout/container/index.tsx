@@ -3,7 +3,7 @@ import { border, layout, position, space } from "styled-system";
 
 import { BoxProps, ThemedProps } from "../types";
 
-export const getEllipsis = ({ ellipsis }: ThemedProps) => {
+const getEllipsis = ({ ellipsis }: ThemedProps) => {
   if (ellipsis) {
     return `white-space: nowrap;
             overflow: hidden;

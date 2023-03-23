@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button as StyledButton, Box, Flex } from "components";
 import { variants, scales } from "./types";
-import { AddIcon } from "components/svg";
+import { AddSvg } from "components/svg";
 
 export default {
   title: "Components/Button",
@@ -50,27 +50,27 @@ export const Button: React.FC = () => {
           Custom color
         </StyledButton>
 
-        <StyledButton color="green" variant="outline" mx="8px">
+        <StyledButton color="blue" variant="outline" mx="8px">
           Custom color
         </StyledButton>
       </Box>
 
       <Box mb="32px">
-        <StyledButton startIcon={<AddIcon />} mx="8px">
+        <StyledButton startIcon={<AddSvg />} mx="8px">
           With Icon
         </StyledButton>
 
-        <StyledButton startIcon={<AddIcon />} variant="outline" mx="8px">
+        <StyledButton startIcon={<AddSvg />} variant="outline" mx="8px">
           With Icon
         </StyledButton>
       </Box>
 
       <Box mb="32px">
-        <StyledButton disabled startIcon={<AddIcon />} mx="8px">
+        <StyledButton disabled startIcon={<AddSvg />} mx="8px">
           Disabled With Icon
         </StyledButton>
 
-        <StyledButton disabled startIcon={<AddIcon />} variant="outline" mx="8px">
+        <StyledButton disabled startIcon={<AddSvg />} variant="outline" mx="8px">
           Disabled With Icon
         </StyledButton>
       </Box>

@@ -11,7 +11,6 @@ export const scales = {
   body: "body",
   caption: "caption",
   header: "header",
-  button: "button",
 } as const;
 
 export type Scales = (typeof scales)[keyof typeof scales];

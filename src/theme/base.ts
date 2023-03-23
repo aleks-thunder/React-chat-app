@@ -34,13 +34,12 @@ export const shadows = {
 export const radii = {
   S: "8px",
   M: "12px",
-  L: "16px",
+  L: "40px",
   circle: "50%",
 } as const;
 
 export const fontWeights = {
   bold: 900,
-  medium: 600,
   regular: 400,
 } as const;
 

@@ -18,18 +18,10 @@ export const style = {
   },
 
   [scales.header]: {
-    fontSizeLaptop: "42px",
-    fontSizeTablet: "42px",
-    fontSizeMobileS: "42px",
+    fontSizeLaptop: "46px",
+    fontSizeTablet: "46px",
+    fontSizeMobileS: "46px",
 
     lineHeight: 1,
-  },
-
-  [scales.button]: {
-    fontSizeLaptop: "16px",
-    fontSizeTablet: "16px",
-    fontSizeMobileS: "16px",
-
-    lineHeight: 1.14,
   },
 };

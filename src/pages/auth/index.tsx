@@ -1,30 +1,33 @@
 import React from "react";
-
-import { useAppDispatch } from "store/store";
-import { setAuth } from "store/user";
+import { useNavigate } from "react-router-dom";
 
 import { signInWithPopup } from "firebase/auth";
+
+import { Button, Page, Text } from "components";
+
 import { FIREBASE, LOCAL_STORAGE_KEYS } from "configs";
+import { ROUTES } from "navigation/routes";
 
 const AuthPage: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(FIREBASE.auth, FIREBASE.provider);
       localStorage.setItem(LOCAL_STORAGE_KEYS.token, result.user.refreshToken);
-      dispatch(setAuth(true));
+      navigate("/" + ROUTES.chat);
     } catch (err) {
-      dispatch(setAuth(false));
       console.error(err);
     }
   };
 
   return (
-    <div>
-      <p>Sign in With Google To Continue</p>
-      <button onClick={signInWithGoogle}>Sign in With Google</button>
-    </div>
+    <Page>
+      <Text mb="50px" textScale="header" fontWeight="bold">
+        Sign in With Google To Continue
+      </Text>
+      <Button onClick={signInWithGoogle}>Sign in With Google</Button>
+    </Page>
   );
 };
 

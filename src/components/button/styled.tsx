@@ -12,7 +12,7 @@ const StyledButton = styled.button<ButtonProps>`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   color: ${({ theme }) => theme.colors.white};
 
-  height: 40px;
+  height: 44px;
   padding: 14px 28px;
   position: relative;
   align-items: center;
@@ -22,7 +22,7 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: center;
   line-height: 16px;
   outline: 0;
-  font-size: 14px;
+  font-size: 18px;
   transition: all 0.2s linear;
   width: fit-content;
   border: 0;

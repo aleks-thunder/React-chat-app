@@ -20,5 +20,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { resetProfile, setAuth } = userSlice.actions;
+export const { resetProfile } = userSlice.actions;
 export default userSlice;

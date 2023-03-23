@@ -10,7 +10,7 @@ const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    navigate(ROUTES.new_chat);
+    navigate(ROUTES.chat);
   };
 
   return (

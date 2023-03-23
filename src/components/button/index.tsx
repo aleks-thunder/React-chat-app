@@ -3,7 +3,7 @@ import React from "react";
 import StyledButton from "./styled";
 import { ButtonProps } from "./types";
 
-import { SpinnerIcon } from "components/svg";
+import { SpinnerSvg } from "components/svg";
 
 export const getExternalLinkProps = () => ({
   target: "_blank",
@@ -18,7 +18,7 @@ const Button = <E extends React.ElementType = "button">(props: ButtonProps<E>): 
   return (
     <StyledButton {...internalProps} {...rest} type={props.type || "button"} disabled={isDisabled}>
       {isLoading ? (
-        <SpinnerIcon color="white" />
+        <SpinnerSvg color="white" />
       ) : (
         <>
           {React.isValidElement(startIcon) &&

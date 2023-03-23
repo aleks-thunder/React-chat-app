@@ -1,2 +1,3 @@
-export { Box } from "./components/container";
-export { Flex } from "./components/flex";
+export { Box } from "./container";
+export { Flex } from "./flex";
+export { Page } from "./page";

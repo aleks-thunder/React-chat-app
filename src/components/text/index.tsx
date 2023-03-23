@@ -11,7 +11,7 @@ export const getEllipsis = ({ ellipsis }: ThemedProps) => {
   }
 };
 
-export const wordBreak = ({ wordBreak }: ThemedProps) => {
+const wordBreak = ({ wordBreak }: ThemedProps) => {
   if (wordBreak) {
     return `word-break: ${wordBreak};`;
   }
