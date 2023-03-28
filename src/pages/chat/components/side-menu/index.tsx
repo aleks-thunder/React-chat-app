@@ -29,7 +29,7 @@ const SideMenu: React.FC = () => {
         Chats
       </Text>
 
-      <Box my="20px">
+      <Box mt="20px" mb="40px">
         <Flex flexDirection="column">
           <form onSubmit={onSubmit}>
             <Input value={newChatName} onChange={e => setNewChatName(e.target.value)} />

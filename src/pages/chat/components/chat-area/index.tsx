@@ -4,6 +4,7 @@ import { SingleMessage, TextInput } from "./components";
 import { ChatWrapper, MessagesWrapper } from "./styled";
 
 import { useAppSelector } from "store/store";
+
 import { useFirebase } from "hooks";
 
 const ChatArea: React.FC = () => {
@@ -21,7 +22,6 @@ const ChatArea: React.FC = () => {
       const element = ref.current;
       element.scroll({
         top: element.scrollHeight,
-        behavior: "smooth",
       });
     }
   }, [ref, messageList]);

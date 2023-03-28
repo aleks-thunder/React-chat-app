@@ -8,11 +8,12 @@ export const SingleChatWrapper = styled(Flex)<{ isActive: boolean }>`
   border-radius: ${({ theme }) => theme.radii.S};
   width: 100%;
   height: 60px;
-  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.grey)};
+  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.primaryLight : theme.colors.grey)};
+  border: ${({ theme, isActive }) => isActive && `1px solid ${theme.colors.black}`};
   cursor: pointer;
-  
+
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryLight};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
