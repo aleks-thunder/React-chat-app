@@ -46,7 +46,7 @@ export const Button: React.FC = () => {
           External
         </StyledButton>
 
-        <StyledButton color="red" mx="8px">
+        <StyledButton color="grey" mx="8px">
           Custom color
         </StyledButton>
 

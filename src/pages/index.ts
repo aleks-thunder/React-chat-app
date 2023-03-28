@@ -6,6 +6,6 @@ export const AuthPage = lazyLoad(
 );
 
 export const ChatPage = lazyLoad(
-  () => import("./chat/chat"),
+  () => import("./chat"),
   module => module.default,
 );

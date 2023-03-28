@@ -5,7 +5,7 @@ import { UserSvg } from "components/svg";
 import { Image, StyledItem, StyledText, UserInfo } from "./styled";
 
 import { FIREBASE } from "configs";
-import { Message } from "../../types";
+import { Message } from "types";
 
 const SingleMessage: React.FC<{ item: Message }> = ({ item }) => {
   const { isPrevMessageSameUID, user, message } = item;

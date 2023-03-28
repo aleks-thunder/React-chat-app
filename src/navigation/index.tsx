@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ROUTES, ROUTE_PARAMS } from "./routes";
+import { ROUTES } from "./routes";
 
 import { AuthPage, ChatPage } from "pages";
 import { TokenHandler } from "./components";
@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
         <Route index element={<AuthPage />} />
       </Route>
 
-      <Route path={`${ROUTES.chat}/:${ROUTE_PARAMS.room}`}>
+      <Route path={`${ROUTES.chat}`}>
         <Route
           index
           element={

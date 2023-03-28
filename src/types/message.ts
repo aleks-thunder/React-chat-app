@@ -1,3 +1,5 @@
+import { CreatedAt } from "store/chat/types";
+
 export type Message = {
   id: string;
   room: string;
@@ -5,11 +7,6 @@ export type Message = {
   isPrevMessageSameUID: boolean;
   user: UserData;
   createdAt: CreatedAt;
-};
-
-type CreatedAt = {
-  seconds: number;
-  nanoseconds: number;
 };
 
 type UserData = {

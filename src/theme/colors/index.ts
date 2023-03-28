@@ -5,7 +5,6 @@ export const baseColors = {
   lightGrey: "#f5f5f5",
   grey: "#9d9d9e",
   blue: "#246BFD",
-  red: "#FF4747",
   background: "#3f3f50",
 } as const;
 

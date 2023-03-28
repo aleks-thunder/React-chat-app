@@ -21,4 +21,5 @@ export const FIREBASE = {
   provider: new GoogleAuthProvider(),
   db: getFirestore(app),
   messageCollection: collection(getFirestore(app), "messages"),
+  userCollection: collection(getFirestore(app), "user-data"),
 };

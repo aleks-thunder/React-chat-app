@@ -1,4 +1,4 @@
-import { mediaQueries, shadows, radii, fontWeights, breakpoints } from "./base";
+import { mediaQueries, shadows, radii, fontWeights, breakpoints, gradients } from "./base";
 import { baseColors, darkColors } from "./colors";
 
 export type MediaQueries = typeof mediaQueries;
@@ -10,6 +10,8 @@ export type Radii = typeof radii;
 export type Shadows = typeof shadows;
 
 export type FontWeights = typeof fontWeights;
+
+export type Gradients = typeof gradients;
 
 export type BaseColors = {
   [property in keyof typeof baseColors]: string;

@@ -43,6 +43,10 @@ export const fontWeights = {
   regular: 400,
 } as const;
 
+export const gradients = {
+  chat: "linear-gradient(0deg, rgba(130, 130, 163, 1) 0%, rgba(63, 63, 80, 1) 80%);",
+} as const;
+
 export default {
   siteWidth: 1200,
   breakpoints,
@@ -50,4 +54,5 @@ export default {
   shadows,
   radii,
   fontWeights,
+  gradients,
 };
