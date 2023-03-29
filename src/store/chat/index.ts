@@ -1,8 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Message } from "types";
 import { ChatItem, ChatState } from "./types.js";
 
 const initialState: ChatState = {
-  activeChat: "",
+  activeChat: {
+    room: "",
+    messageList: [],
+  },
   chatList: [],
 };
 
@@ -16,7 +20,10 @@ const userSlice = createSlice({
       return initialState;
     },
     setActiveChat: (state, action: PayloadAction<string>) => {
-      state.activeChat = action.payload;
+      state.activeChat.room = action.payload;
+    },
+    setMessageList: (state, action: PayloadAction<Message[]>) => {
+      state.activeChat.messageList = action.payload;
     },
     setChatList: (state, action: PayloadAction<ChatItem[]>) => {
       state.chatList = action.payload;
@@ -24,5 +31,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { resetProfile, setActiveChat, setChatList } = userSlice.actions;
+export const { resetProfile, setActiveChat, setChatList, setMessageList } = userSlice.actions;
 export default userSlice;

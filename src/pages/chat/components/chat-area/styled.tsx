@@ -4,6 +4,7 @@ import { Flex } from "components";
 
 export const ChatWrapper = styled(Flex)`
   margin: 40px;
+  margin-top: 50px;
   padding: 15px;
   width: 100%;
   flex-direction: column;

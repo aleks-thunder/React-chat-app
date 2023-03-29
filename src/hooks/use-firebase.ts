@@ -1,11 +1,9 @@
-import { useState } from "react";
-
 import { addDoc, DocumentData, onSnapshot, orderBy, query, serverTimestamp, where } from "firebase/firestore";
 
 import { FIREBASE } from "configs";
 
 import { useAppDispatch, useAppSelector } from "store/store";
-import { setActiveChat, setChatList } from "store/chat";
+import { setActiveChat, setChatList, setMessageList } from "store/chat";
 
 import { Message } from "types";
 
@@ -18,8 +16,6 @@ type useFireBaseProps = {
 const useFirebase = ({ newMessage, newChatName, setNewMessage }: useFireBaseProps) => {
   const dispatch = useAppDispatch();
   const { activeChat, chatList } = useAppSelector(state => state.chat);
-
-  const [messageList, setMessageList] = useState<Message[]>([]);
 
   const getChatList = () => {
     const queryChats = query(FIREBASE.userCollection);
@@ -52,14 +48,13 @@ const useFirebase = ({ newMessage, newChatName, setNewMessage }: useFireBaseProp
     await addDoc(FIREBASE.messageCollection, {
       message: newMessage,
       createdAt: serverTimestamp(),
-      // TODO isPrevMessageSameUID
-      // isPrevMessageSameUID: FIREBASE.auth.currentUser?.uid === messages.at(-1)?.user.uid,
+      isPrevMessageSameUID: FIREBASE.auth.currentUser?.uid === activeChat.messageList.at(-1)?.user.uid,
       user: {
         userName: FIREBASE.auth.currentUser?.displayName,
         photoURL: FIREBASE.auth.currentUser?.photoURL,
         uid: FIREBASE.auth.currentUser?.uid,
       },
-      room: activeChat,
+      room: activeChat.room,
     });
 
     if (setNewMessage) {
@@ -68,19 +63,23 @@ const useFirebase = ({ newMessage, newChatName, setNewMessage }: useFireBaseProp
   };
 
   const getChatMessages = () => {
-    if (activeChat) {
-      const queryMessages = query(FIREBASE.messageCollection, where("room", "==", activeChat), orderBy("createdAt"));
+    if (activeChat.room) {
+      const queryMessages = query(
+        FIREBASE.messageCollection,
+        where("room", "==", activeChat.room),
+        orderBy("createdAt"),
+      );
       onSnapshot(queryMessages, snapshot => {
         let messages: Message[] = [];
         snapshot.forEach((doc: DocumentData) => {
           messages.push({ ...doc.data(), id: doc.id });
         });
 
-        setMessageList(messages);
+        dispatch(setMessageList(messages));
       });
     }
   };
-  return { messageList, createNewMessage, getChatList, onChatInput, getChatMessages };
+  return { createNewMessage, getChatList, onChatInput, getChatMessages };
 };
 
 export default useFirebase;

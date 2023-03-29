@@ -11,25 +11,25 @@ const ChatArea: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { activeChat } = useAppSelector(state => state.chat);
 
-  const { messageList, getChatMessages } = useFirebase({});
+  const { getChatMessages } = useFirebase({});
 
   useEffect(() => {
     getChatMessages();
-  }, [activeChat]);
+  }, [activeChat.room]);
 
   useEffect(() => {
-    if (messageList && ref.current) {
+    if (activeChat.messageList && ref.current) {
       const element = ref.current;
       element.scroll({
         top: element.scrollHeight,
       });
     }
-  }, [ref, messageList]);
+  }, [ref, activeChat.messageList]);
 
   return (
     <ChatWrapper>
       <MessagesWrapper ref={ref}>
-        {messageList.map(item => (
+        {activeChat.messageList.map(item => (
           <SingleMessage key={item.id} item={item} />
         ))}
       </MessagesWrapper>
