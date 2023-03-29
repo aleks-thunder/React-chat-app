@@ -4,8 +4,7 @@ import { FIREBASE } from "configs";
 
 import { useAppDispatch, useAppSelector } from "store/store";
 import { setActiveChat, setChatList, setMessageList } from "store/chat";
-
-import { Message } from "types";
+import { ChatItem, Message } from "store/chat/types";
 
 type useFireBaseProps = {
   newMessage?: string;
@@ -21,7 +20,7 @@ const useFirebase = ({ newMessage, newChatName, setNewMessage }: useFireBaseProp
     const queryChats = query(FIREBASE.userCollection);
 
     onSnapshot(queryChats, snapshot => {
-      let chats: any[] = [];
+      let chats: ChatItem[] = [];
       snapshot.forEach((doc: DocumentData) => {
         if (doc.data().uid === FIREBASE.auth.currentUser?.uid) {
           chats.push({ ...doc.data(), id: doc.id });

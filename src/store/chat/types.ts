@@ -1,5 +1,3 @@
-import { Message } from "types";
-
 export type ChatState = {
   activeChat: {
     room: string;
@@ -8,9 +6,25 @@ export type ChatState = {
   chatList: ChatItem[];
 };
 
+export type Message = {
+  id: string;
+  room: string;
+  message: string;
+  isPrevMessageSameUID: boolean;
+  user: UserData;
+  createdAt: CreatedAt;
+};
+
+type UserData = {
+  userName: string;
+  photoURL: string;
+  uid: string;
+};
+
 export type ChatItem = {
   room: string;
   createdAt: CreatedAt;
+  lastChatMessage: string;
   uid: string;
   id: string;
   chatPhoto?: string;
