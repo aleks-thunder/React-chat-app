@@ -15,7 +15,6 @@ const SideMenu: React.FC = () => {
 
   useEffect(() => {
     getChatList();
-    return getChatList();
   }, []);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {

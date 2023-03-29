@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Flex } from "components";
 
 export const SingleChatWrapper = styled(Flex)<{ isActive: boolean }>`
+  align-items: center;
   margin: 1px 0px;
   padding: 10px;
   border-radius: ${({ theme }) => theme.radii.S};

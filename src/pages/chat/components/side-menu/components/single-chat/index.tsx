@@ -25,9 +25,6 @@ const SingleChat: React.FC<{ item: ChatItem }> = ({ item }) => {
         <Text ml="10px" fontWeight="bold">
           {item.room}
         </Text>
-        <Text ml="10px" textScale="caption" mt="2px">
-          {item.room}
-        </Text>
       </Flex>
     </SingleChatWrapper>
   );

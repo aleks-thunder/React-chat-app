@@ -19,7 +19,7 @@ const ChatPage: React.FC = () => {
     <Page>
       <Flex height="100%" width="100%">
         <SideMenu />
-        <Box position="absolute" right="20px" top="20px">
+        <Box position="absolute" right="40px" top="20px">
           <Button onClick={handleLogout}>Log out</Button>
         </Box>
         {activeChat.room && <ChatArea />}

@@ -24,7 +24,6 @@ type UserData = {
 export type ChatItem = {
   room: string;
   createdAt: CreatedAt;
-  lastChatMessage: string;
   uid: string;
   id: string;
   chatPhoto?: string;
