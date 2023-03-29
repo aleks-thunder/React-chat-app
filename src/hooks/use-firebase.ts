@@ -22,8 +22,10 @@ const useFirebase = ({ newMessage, newChatName, setNewMessage }: useFireBaseProp
 
     onSnapshot(queryChats, snapshot => {
       let chats: any[] = [];
-      snapshot.forEach((doc: any) => {
-        chats.push({ ...doc.data(), id: doc.id });
+      snapshot.forEach((doc: DocumentData) => {
+        if (doc.data().uid === FIREBASE.auth.currentUser?.uid) {
+          chats.push({ ...doc.data(), id: doc.id });
+        }
       });
 
       dispatch(setChatList(chats));
